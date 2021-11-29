@@ -1,4 +1,4 @@
-export default [
+const produtos = [
     { id: 1, nome: "Caneta", preco: 2.99 },
     { id: 2, nome: "Lapis", preco: 1.99 },
     { id: 3, nome: "iPad", preco: 5866.99 },
@@ -10,3 +10,5 @@ export default [
     { id: 9, nome: "Monitor 27", preco: 799.99 },
     { id: 10, nome: "Cadeira", preco: 1239.99 },
 ];
+
+export default produtos;

@@ -4,7 +4,7 @@ export default function TabelaProdutos() {
     function getLinhas() {
         return produtos.map((produto, i) => {
             return (
-                <tr key={produto.id} className={i % 2 == 0 ? "Par" : ""}>
+                <tr key={produto.id} className={i % 2 === 0 ? "Par" : ""}>
                     <td>{produto.id}</td>
                     <td className="Nome">{produto.nome}</td>
                     <td className="Preco">
