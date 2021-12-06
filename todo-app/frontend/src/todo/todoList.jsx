@@ -1,48 +1,47 @@
 import React from "react";
 import IconButton from "../template/iconButtons";
 
-export default function TodoList(props) {
+export default (props) => {
     const renderRows = () => {
         const list = props.list || [];
-
         return list.map((todo) => (
             <tr key={todo._id}>
                 <td className={todo.done ? "markedAsDone" : ""}>
-                    {" "}
                     {todo.description}
                 </td>
                 <td>
                     <IconButton
                         style="success"
-                        hide={todo.done}
                         icon="check"
+                        hide={todo.done}
                         onClick={() => props.handleMarkAsDone(todo)}
                     ></IconButton>
                     <IconButton
                         style="warning"
-                        hide={!todo.done}
                         icon="undo"
+                        hide={!todo.done}
                         onClick={() => props.handleMarkAsPending(todo)}
                     ></IconButton>
                     <IconButton
                         style="danger"
-                        // hide={!todo.done}
                         icon="trash-o"
+                        // hide={!todo.done}
                         onClick={() => props.handleRemove(todo)}
                     ></IconButton>
                 </td>
             </tr>
         ));
     };
+
     return (
         <table className="table">
             <thead>
                 <tr>
                     <th>Descrição</th>
-                    <th className="tableActions"> Ações </th>
+                    <th className="tableActions">Ações</th>
                 </tr>
             </thead>
-            {/* <tbody>{renderRows()}</tbody> */}
+            <tbody>{renderRows()}</tbody>
         </table>
     );
-}
+};
